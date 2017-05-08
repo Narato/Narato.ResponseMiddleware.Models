@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Narato.ResponseMiddleware.Models.Models
 {
@@ -11,11 +9,11 @@ namespace Narato.ResponseMiddleware.Models.Models
         {
             if (field == null)
             {
-                throw new ArgumentException(nameof(field));
+                throw new ArgumentNullException(nameof(field));
             }
             if (item == null)
             {
-                throw new ArgumentException(nameof(item));
+                throw new ArgumentNullException(nameof(item));
             }
 
             if (! ContainsKey(field))
