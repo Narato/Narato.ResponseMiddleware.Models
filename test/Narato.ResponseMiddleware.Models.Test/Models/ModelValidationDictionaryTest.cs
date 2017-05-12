@@ -72,6 +72,7 @@ namespace Narato.ResponseMiddleware.Models.Test.Models
             var castedTestDict = testDict as IModelValidationDictionary<object>;
             Assert.NotNull(castedTestDict);
             Assert.Equal("moop", castedTestDict.Values.First().First());
+            Assert.True(testDict is IModelValidationDictionary<object>);
         }
     }
 }
