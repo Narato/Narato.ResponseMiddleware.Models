@@ -10,7 +10,7 @@ namespace Narato.ResponseMiddleware.Models.Models
         {
             get
             {
-                return Values;
+                return base.Values;
             }
         }
 
