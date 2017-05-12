@@ -1,10 +1,19 @@
-﻿using System;
+﻿using Narato.ResponseMiddleware.Models.Models.Interfaces;
+using System;
 using System.Collections.Generic;
 
 namespace Narato.ResponseMiddleware.Models.Models
 {
-    public class ModelValidationDictionary<T> : Dictionary<string, ICollection<T>>
+    public class ModelValidationDictionary<T> : Dictionary<string, ICollection<T>>, IModelValidationDictionary<T>
     {
+        public new IEnumerable<IEnumerable<T>> Values
+        {
+            get
+            {
+                return Values;
+            }
+        }
+
         public void Add(string field, T item)
         {
             if (field == null)

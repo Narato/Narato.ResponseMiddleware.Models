@@ -1,4 +1,5 @@
 ﻿using Narato.ResponseMiddleware.Models.Models;
+using Narato.ResponseMiddleware.Models.Models.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -60,6 +61,17 @@ namespace Narato.ResponseMiddleware.Models.Test.Models
 
             var ex = Assert.Throws<Exception>(() => testDict.Add("test", "meep"));
             Assert.Equal("item for field test was already added to validationDictionary: meep", ex.Message);
+        }
+
+        [Fact]
+        public void VarianceTest()
+        {
+            var testDict = new ModelValidationDictionary<string>();
+            testDict.Add("meep", "moop");
+
+            var castedTestDict = testDict as IModelValidationDictionary<object>;
+            Assert.NotNull(castedTestDict);
+            //Assert.Equal("moop", castedTestDict.Values.First().First());
         }
     }
 }
