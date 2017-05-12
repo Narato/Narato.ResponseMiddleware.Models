@@ -1,7 +1,9 @@
-﻿namespace Narato.ResponseMiddleware.Models.Models
+﻿using Narato.ResponseMiddleware.Models.Models.Interfaces;
+
+namespace Narato.ResponseMiddleware.Models.Models
 {
     public class ValidationErrorContent<T>
     {
-        public ModelValidationDictionary<T> ValidationMessages { get; set; }
+        public IModelValidationDictionary<T> ValidationMessages { get; set; }
     }
 }
