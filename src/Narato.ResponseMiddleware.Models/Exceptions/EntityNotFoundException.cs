@@ -4,7 +4,7 @@ namespace Narato.ResponseMiddleware.Models.Exceptions
 {
     public class EntityNotFoundException : CodedException
     {
-        public EntityNotFoundException() : base() {}
+        public EntityNotFoundException() : base(string.Empty, string.Empty) {}
 
         public EntityNotFoundException(string code, string message)
             : base(code, message) {}
