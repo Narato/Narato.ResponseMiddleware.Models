@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using Narato.ResponseMiddleware.Models.Models.Interfaces;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Narato.ResponseMiddleware.Models.Models
 {
-    public class Paged<T>
+    public class Paged<T> : IPaged<T>
     {
         public Paged(IEnumerable<T> source, int page, int pageSize, int totalCount)
         {
@@ -13,9 +14,9 @@ namespace Narato.ResponseMiddleware.Models.Models
             Total = totalCount;
         }
 
-        public IEnumerable<T> Items { get; set; }
-        public int Skip { get; set; }
-        public int Take { get; set; }
-        public int Total { get; set; }
+        public IEnumerable<T> Items { get; }
+        public int Skip { get; }
+        public int Take { get; }
+        public int Total { get; }
     }
 }
