@@ -1,5 +1,5 @@
 ﻿{
-  "version": "1.0.1-*",
+  "version": "1.0.2-*",
   "title": "Narato.ResponseMiddleware.Models",
   "description": "Library containing all the core models needed for using the Narato ResponseMiddleware stack",
   "authors": [ "Narato - http://www.narato.be" ],

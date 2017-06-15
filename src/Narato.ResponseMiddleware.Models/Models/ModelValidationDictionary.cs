@@ -36,5 +36,21 @@ namespace Narato.ResponseMiddleware.Models.Models
             }
             this[field].Add(item);
         }
+
+        public void Add(ModelValidationDictionary<T> dict)
+        {
+            if (dict == null)
+            {
+                throw new ArgumentNullException(nameof(dict));
+            }
+
+            foreach (var kvp in dict)
+            {
+                foreach (var item in kvp.Value)
+                {
+                    Add(kvp.Key, item);
+                }
+            }
+        }
     }
 }

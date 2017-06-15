@@ -74,5 +74,21 @@ namespace Narato.ResponseMiddleware.Models.Test.Models
             Assert.Equal("moop", castedTestDict.Values.First().First());
             Assert.True(testDict is IModelValidationDictionary<object>);
         }
+
+        [Fact]
+        public void AddAnotherDictionaryShouldWorkTest()
+        {
+            var firstDict = new ModelValidationDictionary<string>();
+            firstDict.Add("meep", "moop");
+            firstDict.Add("meep1", "meepmeep");
+
+            var destinationDict = new ModelValidationDictionary<string>();
+            destinationDict.Add("meep", "moopmoop");
+
+            destinationDict.Add(firstDict);
+
+            Assert.Equal(2, destinationDict["meep"].Count);
+            Assert.Equal("meepmeep", destinationDict["meep1"].First());
+        }
     }
 }

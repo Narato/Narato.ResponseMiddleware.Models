@@ -13,7 +13,7 @@
     "xunit.runner.console": "2.2.0-beta1-build3239",
     "Microsoft.AspNetCore.Mvc.ViewFeatures": "1.0.0",
     "Narato.ResponseMiddleware.Models": "1.0.1",
-    "Narato.StringExtensions": "1.0.1"
+    "Narato.StringExtensions": "1.0.2"
   },
   "frameworks": {
     "netcoreapp1.0": {
