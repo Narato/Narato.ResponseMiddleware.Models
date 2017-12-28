@@ -3,7 +3,6 @@ using Narato.ResponseMiddleware.Models.Models.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace Narato.ResponseMiddleware.Models.Test.Models
@@ -33,7 +32,7 @@ namespace Narato.ResponseMiddleware.Models.Test.Models
 
             testDict.Add("test", "meep");
 
-            Assert.IsType(typeof(List<string>), testDict["test"]);
+            Assert.IsType<List<string>>(testDict["test"]);
             Assert.Equal(1, testDict["test"].Count);
             Assert.Equal("meep", testDict["test"].First());
         }
@@ -46,7 +45,7 @@ namespace Narato.ResponseMiddleware.Models.Test.Models
             testDict.Add("test", "meep");
             testDict.Add("test", "meep2");
 
-            Assert.IsType(typeof(List<string>), testDict["test"]);
+            Assert.IsType<List<string>>(testDict["test"]);
             Assert.Equal(2, testDict["test"].Count);
             Assert.Equal("meep", testDict["test"].First());
             Assert.Equal("meep2", testDict["test"].Last());

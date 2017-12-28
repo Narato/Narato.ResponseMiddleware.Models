@@ -14,9 +14,9 @@ namespace Narato.ResponseMiddleware.Models.Test.Models
             var paged = new Paged<string>(items, 3, 5, 1000);
 
             Assert.Equal(paged.Items, items);
-            Assert.Equal(paged.Skip, 10);
-            Assert.Equal(paged.Take, 5);
-            Assert.Equal(paged.Total, 1000);
+            Assert.Equal(10, paged.Skip);
+            Assert.Equal(5, paged.Take);
+            Assert.Equal(1000, paged.Total);
         }
 
         [Fact]
