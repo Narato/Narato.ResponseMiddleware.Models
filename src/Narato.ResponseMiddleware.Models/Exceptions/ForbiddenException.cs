@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Runtime.Serialization;
 
 namespace Narato.ResponseMiddleware.Models.Exceptions
 {
-    public class ForbiddenException : CodedException
+    [Serializable]
+    public class ForbiddenException : CodedException, ISerializable
     {
         public ForbiddenException() : base() { }
 
@@ -10,5 +12,14 @@ namespace Narato.ResponseMiddleware.Models.Exceptions
             : base(code, message) { }
 
         public ForbiddenException(string errorCode, string message, Exception innerException) : base(errorCode, message, innerException) { }
+
+        //Deserialization constructor.
+        public ForbiddenException(SerializationInfo info, StreamingContext context)
+            : base(info, context) { }
+
+        public override void GetObjectData(SerializationInfo info, StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+        }
     }
 }
