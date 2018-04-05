@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 namespace Narato.ResponseMiddleware.Models.Exceptions
 {
     [Serializable]
-    public class UnauthorizedException : CodedException, ISerializable
+    public class UnauthorizedException : CodedException
     {
         public UnauthorizedException() : base() { }
 

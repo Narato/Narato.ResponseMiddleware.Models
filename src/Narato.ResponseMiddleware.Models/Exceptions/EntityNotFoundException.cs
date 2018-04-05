@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 namespace Narato.ResponseMiddleware.Models.Exceptions
 {
     [Serializable]
-    public class EntityNotFoundException : CodedException, ISerializable
+    public class EntityNotFoundException : CodedException
     {
         public EntityNotFoundException() : base(string.Empty, string.Empty) {}
 

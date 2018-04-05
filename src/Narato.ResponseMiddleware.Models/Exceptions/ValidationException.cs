@@ -7,7 +7,7 @@ using System.Runtime.Serialization;
 namespace Narato.ResponseMiddleware.Models.Exceptions
 {
     [Serializable]
-    public class ValidationException<T> : Exception, IValidationException<T>, ISerializable
+    public class ValidationException<T> : Exception, IValidationException<T>
     {
         public IModelValidationDictionary<T> ValidationMessages { get; }
 

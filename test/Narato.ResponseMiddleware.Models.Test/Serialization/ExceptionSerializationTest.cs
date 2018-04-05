@@ -15,13 +15,8 @@ namespace Narato.ResponseMiddleware.Models.Test.Serialization
         {
             var ErrorCode = "Test";
             var exception = new EntityNotFoundException(ErrorCode, "Test Message");
-            try {
-                var deserializedException = Clone(exception);
-                Assert.Equal(deserializedException.ErrorCode, ErrorCode);
-            }
-            catch(Exception ex) {
-                Assert.Null(ex.Message);
-            }
+            var deserializedException = Clone(exception);
+            Assert.Equal(deserializedException.ErrorCode, ErrorCode);
         }
 
         [Fact]
@@ -29,15 +24,8 @@ namespace Narato.ResponseMiddleware.Models.Test.Serialization
         {
             var ErrorCode = "EWFTest";
             var exception = new ExceptionWithFeedback(ErrorCode, "Test Message");
-            try
-            {
-                var deserializedException = Clone(exception);
-                Assert.Equal(deserializedException.ErrorCode, ErrorCode);
-            }
-            catch (SerializationException ex)
-            {
-                Assert.Null(ex.Message);
-            }
+            var deserializedException = Clone(exception);
+            Assert.Equal(deserializedException.ErrorCode, ErrorCode);
         }
 
         [Fact]
@@ -45,15 +33,8 @@ namespace Narato.ResponseMiddleware.Models.Test.Serialization
         {
             var ErrorCode = "FTest";
             var exception = new ForbiddenException(ErrorCode, "Test Feedback");
-            try
-            {
-                var deserializedException = Clone(exception);
-                Assert.Equal(deserializedException.ErrorCode, ErrorCode);
-            }
-            catch (SerializationException ex)
-            {
-                Assert.Null(ex.Message);
-            }
+            var deserializedException = Clone(exception);
+            Assert.Equal(deserializedException.ErrorCode, ErrorCode);
         }
 
         [Fact]
@@ -61,15 +42,8 @@ namespace Narato.ResponseMiddleware.Models.Test.Serialization
         {
             var ErrorCode = "UATest";
             var exception = new UnauthorizedException(ErrorCode, "Test Feedback");
-            try
-            {
-                var deserializedException = Clone(exception);
-                Assert.Equal(deserializedException.ErrorCode, ErrorCode);
-            }
-            catch (SerializationException ex)
-            {
-                Assert.Null(ex.Message);
-            }
+            var deserializedException = Clone(exception);
+            Assert.Equal(deserializedException.ErrorCode, ErrorCode);
         }
 
         [Fact]
@@ -79,17 +53,9 @@ namespace Narato.ResponseMiddleware.Models.Test.Serialization
             var modelDictionary = new ModelValidationDictionary<string>() { };
             modelDictionary.Add(testKey, "TestValue");
             var exception = new ValidationException<string>(modelDictionary);
-            try
-            {
-                var deserializedException = Clone(exception);
-                Assert.Equal(1, deserializedException?.ValidationMessages?.Count);
-                Assert.True(deserializedException?.ValidationMessages?.ContainsKey(testKey));
-            }
-            catch (SerializationException ex)
-            {
-                Assert.Null(ex.Message);
-            }
-            
+            var deserializedException = Clone(exception);
+            Assert.Equal(1, deserializedException?.ValidationMessages?.Count);
+            Assert.True(deserializedException?.ValidationMessages?.ContainsKey(testKey));
         }
 
         public static Stream Serialize(object source)
