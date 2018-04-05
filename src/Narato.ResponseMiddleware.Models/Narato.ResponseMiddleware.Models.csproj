@@ -4,7 +4,7 @@
     <Description>Library containing all the core models needed for using the Narato ResponseMiddleware stack</Description>
     <AssemblyTitle>Narato.ResponseMiddleware.Models</AssemblyTitle>
     <NeutralLanguage>en-us</NeutralLanguage>
-    <VersionPrefix>2.0.0</VersionPrefix>
+    <VersionPrefix>2.0.1</VersionPrefix>
     <Authors>Narato - http://www.narato.be</Authors>
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <AssemblyName>Narato.ResponseMiddleware.Models</AssemblyName>

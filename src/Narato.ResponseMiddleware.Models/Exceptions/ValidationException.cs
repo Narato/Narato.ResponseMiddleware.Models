@@ -2,9 +2,11 @@
 using Narato.ResponseMiddleware.Models.Models;
 using Narato.ResponseMiddleware.Models.Models.Interfaces;
 using System;
+using System.Runtime.Serialization;
 
 namespace Narato.ResponseMiddleware.Models.Exceptions
 {
+    [Serializable]
     public class ValidationException<T> : Exception, IValidationException<T>
     {
         public IModelValidationDictionary<T> ValidationMessages { get; }
@@ -23,5 +25,18 @@ namespace Narato.ResponseMiddleware.Models.Exceptions
         {
             ValidationMessages = validationMessages;
         }
+
+        //Deserialization constructor.
+        public ValidationException(SerializationInfo info, StreamingContext context) : base(info, context) {
+            ValidationMessages = (IModelValidationDictionary<T>)info.GetValue("ValidationMessages", typeof(IModelValidationDictionary<T>));
+        }
+
+        public override void GetObjectData(SerializationInfo info, StreamingContext context)
+        {
+            info.AddValue("ValidationMessages", ValidationMessages);
+            base.GetObjectData(info, context);
+        }
+
+        
     }
 }
