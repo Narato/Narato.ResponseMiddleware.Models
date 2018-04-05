@@ -1,11 +1,20 @@
 ﻿using Narato.ResponseMiddleware.Models.Models.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 
 namespace Narato.ResponseMiddleware.Models.Models
 {
-    public class ModelValidationDictionary<T> : Dictionary<string, ICollection<T>>, IModelValidationDictionary<T>
+    [Serializable]
+    public class ModelValidationDictionary<T> : Dictionary<string, ICollection<T>>, IModelValidationDictionary<T>, ISerializable
     {
+        //Deserialization constructor.
+        public ModelValidationDictionary(SerializationInfo info, StreamingContext context) 
+            : base(info, context) {  }
+
+        public ModelValidationDictionary()
+        {  }
+
         public new IEnumerable<IEnumerable<T>> Values
         {
             get
@@ -51,6 +60,16 @@ namespace Narato.ResponseMiddleware.Models.Models
                     Add(kvp.Key, item);
                 }
             }
+        }
+
+        public override void GetObjectData(SerializationInfo info, StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+        }
+
+        public override void OnDeserialization(object sender)
+        {
+            base.OnDeserialization(sender);
         }
     }
 }

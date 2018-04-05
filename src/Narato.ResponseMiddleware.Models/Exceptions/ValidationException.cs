@@ -27,11 +27,13 @@ namespace Narato.ResponseMiddleware.Models.Exceptions
         }
 
         //Deserialization constructor.
-        public ValidationException(SerializationInfo info, StreamingContext context)
-            : base(info, context) { }
+        public ValidationException(SerializationInfo info, StreamingContext context) : base(info, context) {
+            ValidationMessages = (IModelValidationDictionary<T>)info.GetValue("ValidationMessages", typeof(IModelValidationDictionary<T>));
+        }
 
         public override void GetObjectData(SerializationInfo info, StreamingContext context)
         {
+            info.AddValue("ValidationMessages", ValidationMessages);
             base.GetObjectData(info, context);
         }
 
