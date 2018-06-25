@@ -4,14 +4,14 @@
     <Description>Library containing all the core models needed for using the Narato ResponseMiddleware stack</Description>
     <AssemblyTitle>Narato.ResponseMiddleware.Models</AssemblyTitle>
     <NeutralLanguage>en-us</NeutralLanguage>
-    <VersionPrefix>2.0.1</VersionPrefix>
+    <VersionPrefix>2.0.2</VersionPrefix>
     <Authors>Narato - http://www.narato.be</Authors>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Narato.ResponseMiddleware.Models</AssemblyName>
     <PackageId>Narato.ResponseMiddleware.Models</PackageId>
     <PackageTags>Narato;Libraries;Middleware;Models</PackageTags>
     <PackageIconUrl>http://narato.be/wp-content/uploads/2016/11/narato-icon-logo-64x64-transparant.png</PackageIconUrl>
-    <NetStandardImplicitPackageVersion>1.6.0</NetStandardImplicitPackageVersion>
+    <NetStandardImplicitPackageVersion>2.0.0</NetStandardImplicitPackageVersion>
     <AssetTargetFallback>$(AssetTargetFallback);dotnet5.6;dnxcore50;portable-net45+win8</AssetTargetFallback>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
