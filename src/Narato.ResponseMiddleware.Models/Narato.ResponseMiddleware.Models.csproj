@@ -1,10 +1,10 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <Description>Library containing all the core models needed for using the Narato ResponseMiddleware stack</Description>
     <AssemblyTitle>Narato.ResponseMiddleware.Models</AssemblyTitle>
     <NeutralLanguage>en-us</NeutralLanguage>
-    <VersionPrefix>2.0.2</VersionPrefix>
+    <VersionPrefix>2.0.3</VersionPrefix>
     <Authors>Narato - http://www.narato.be</Authors>
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Narato.ResponseMiddleware.Models</AssemblyName>
@@ -17,9 +17,5 @@
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.0.0" />
-  </ItemGroup>
 
 </Project>
